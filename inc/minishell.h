@@ -6,7 +6,7 @@
 /*   By: mdiez-as <mdiez-as@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 13:07:43 by mgaspar-          #+#    #+#             */
-/*   Updated: 2023/11/25 14:13:40 by mdiez-as         ###   ########.fr       */
+/*   Updated: 2023/11/25 14:39:23 by mdiez-as         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,13 @@
 typedef struct s_input {
 	// variables que ens calguin del environment?
 }	t_input;
+
+
+
+//*******************SIGNALS*******************//
+void	ft_signal_handler(int sig);
+
+
 #endif
 
 
