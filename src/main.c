@@ -6,7 +6,7 @@
 /*   By: mdiez-as <mdiez-as@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 13:07:14 by mgaspar-          #+#    #+#             */
-/*   Updated: 2023/11/25 14:49:32 by mdiez-as         ###   ########.fr       */
+/*   Updated: 2023/11/25 15:01:41 by mdiez-as         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	shell_loop(t_input *input)
 		// display prompt
 		prompt = readline(NULL);
 		// wait for command
-		parsed_prompt = prompt;
+		parsed_prompt = ft_lexer(prompt);
 		// parse prompt
 		printf("prompt i got: %s", parsed_prompt);
 		// execute command
