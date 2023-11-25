@@ -3,21 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgaspar- <mgaspar-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mdiez-as <mdiez-as@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 13:07:43 by mgaspar-          #+#    #+#             */
-/*   Updated: 2023/11/25 13:33:11 by mgaspar-         ###   ########.fr       */
+/*   Updated: 2023/11/25 13:58:50 by mdiez-as         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef MINISHELL_H
 # define MINISHELL_H
 
-# define EXIT_SUCCESS 1
-# define
+# define EXIT_SUCCESS	1
+
 
 # include <stdio.h>
 # include <unistd.h>
+# include <signal.h>
+# include <stdlib.h>
 
 
 #endif
+
+
+
