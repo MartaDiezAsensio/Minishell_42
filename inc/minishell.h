@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdiez-as <mdiez-as@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mdiez-as <mdiez-as@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 13:07:43 by mgaspar-          #+#    #+#             */
-/*   Updated: 2023/11/25 14:39:23 by mdiez-as         ###   ########.fr       */
+/*   Updated: 2023/11/27 16:52:41 by mdiez-as         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ typedef struct s_input {
 //*******************SIGNALS*******************//
 void	ft_signal_handler(int sig);
 
+
+//*******************LEXER*******************//
 
 #endif
 
