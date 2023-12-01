@@ -6,7 +6,7 @@
 /*   By: mdiez-as <mdiez-as@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 14:41:58 by mdiez-as          #+#    #+#             */
-/*   Updated: 2023/12/01 18:01:45 by mdiez-as         ###   ########.fr       */
+/*   Updated: 2023/12/01 19:12:28 by mdiez-as         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,21 @@ int	term(int token_type, char **buffer_ptr)
 
 t_tree_node	*CMDLINE()
 {
-	
+	t_tok		*save;
+	t_tree_node	*node;
+
+	save = curr_tok;
+	if (curr_tok = save, node = CMDLINE1() != NULL)
+		return (node);
+	if (curr_tok = save, node = CMDLINE2() != NULL)
+		return (node);
+	if (curr_tok = save, node = CMDLINE3() != NULL)
+		return (node);
+	if (curr_tok = save, node = CMDLINE4() != NULL)
+		return (node);
+	if (curr_tok = save, node = CMDLINE5() != NULL)
+		return (node);
+	return (NULL);
 }
 
 
