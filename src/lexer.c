@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lexer.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdiez-as <mdiez-as@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mdiez-as <mdiez-as@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 17:10:15 by mdiez-as          #+#    #+#             */
-/*   Updated: 2023/11/30 20:14:04 by mdiez-as         ###   ########.fr       */
+/*   Updated: 2023/12/01 17:55:08 by mdiez-as         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -292,7 +292,6 @@ void	lexer_destroy(t_lexer *lexerbuf)
 }
 
 //**************************************************//
-
 
 // void print_tokens(t_tok *tokens) {
 // 	t_tok *current = tokens;
