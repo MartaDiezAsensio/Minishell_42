@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdiez-as <mdiez-as@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: mdiez-as <mdiez-as@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 14:41:58 by mdiez-as          #+#    #+#             */
-/*   Updated: 2023/12/01 19:12:28 by mdiez-as         ###   ########.fr       */
+/*   Updated: 2023/12/04 18:37:21 by mdiez-as         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,20 @@ t_tree_node	*CMDLINE()
 	return (NULL);
 }
 
+t_tree_node	*CMDLINE1()
+{
+	t_tree_node	*job_node;
+	t_tree_node	*cmdline_node;
+	t_tree_node	*result;
+
+	if ((job_node = JOB()) == NULL)
+		return (NULL);
+	if (!term(CHAR_SEMICOLON, NULL))
+	{
+		t_tree_node(job_node);
+		return (NULL);
+	}
+}
 
 
 int	parse(t_lexer *lexerbuf, t_tree_node **syntax_tree)
