@@ -6,7 +6,7 @@
 /*   By: mdiez-as <mdiez-as@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 14:41:58 by mdiez-as          #+#    #+#             */
-/*   Updated: 2023/12/04 18:37:21 by mdiez-as         ###   ########.fr       */
+/*   Updated: 2023/12/08 19:12:37 by mdiez-as         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,7 +122,6 @@ t_tree_node	*CMDLINE1()
 		return (NULL);
 	}
 }
-
 
 int	parse(t_lexer *lexerbuf, t_tree_node **syntax_tree)
 {
