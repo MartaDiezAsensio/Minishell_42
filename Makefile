@@ -18,11 +18,11 @@ CFLAGS= -Wall -Wextra -Werror
 LDFLAGS= -lreadline -L./inc -lft
 
 # File dirs
-SRCDIR=./src
+SRCDIR=./src_2/main
 OBJDIR=./obj
 # File names
 NAME=minishell
-HEADER=./inc/minishell.h
+HEADER=./include_2/minishell.h ./include_2/lexer_utils.h ./include_2/main.h
 LIB=./inc/libft.a
 SRC=$(wildcard $(SRCDIR)/*.c)
 OBJ=$(patsubst $(SRCDIR)/%.c, $(OBJDIR)/%.o, $(SRC))

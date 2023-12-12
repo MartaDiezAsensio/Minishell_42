@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdiez-as <mdiez-as@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: mgaspar- <mgaspar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 13:07:43 by mgaspar-          #+#    #+#             */
-/*   Updated: 2023/12/01 17:56:54 by mdiez-as         ###   ########.fr       */
+/*   Updated: 2023/12/11 17:48:32 by mgaspar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <stdio.h>
 # include <readline/readline.h>
 # include <readline/history.h>
+# include "./libft/libft.h"
 
 
 #include <string.h>
@@ -56,14 +57,14 @@ enum token_type {
 	CHAR_GREATER = '>',
 	CHAR_LESSER = '<',
 	CHAR_NULL = 0,
-	
+
 	TOKEN	= -1,
 };
 
 enum {
 	STATE_IN_DQUOTE,
 	STATE_IN_QUOTE,
-	
+
 	STATE_IN_ESCAPESEQ,
 	STATE_GENERAL,
 };

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lexer.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdiez-as <mdiez-as@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: mgr-par- <mgr-par-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 17:10:15 by mdiez-as          #+#    #+#             */
-/*   Updated: 2023/12/01 17:55:08 by mdiez-as         ###   ########.fr       */
+/*   Updated: 2023/12/11 18:24:48 by mgr-par-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ int	lexer(char *input, int size, t_lexer *lexerbuf)
 {
 	int		i;
 	int		j;
-	char	c;
+	//char	c;
 	int		state;
 	int		chtype;
 	int		ntemtok;
@@ -253,7 +253,7 @@ int	lexer(char *input, int size, t_lexer *lexerbuf)
 					return (-1);
 				ft_strcpy(token->data, globbuf.gl_pathv[0]);
 				i = 1;
-				while (i < globbuf.gl_pathc)
+				while ((unsigned int)i < globbuf.gl_pathc)
 				{
 					token->next = malloc(sizeof(t_tok));
 					if (!token->next)
