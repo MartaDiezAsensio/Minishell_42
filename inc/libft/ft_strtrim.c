@@ -1,49 +1,61 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strtrim.c                                          :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrameau <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: mdiez-as <mdiez-as@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/27 00:50:46 by jrameau           #+#    #+#             */
-/*   Updated: 2016/09/27 00:50:47 by jrameau          ###   ########.fr       */
+/*   Updated: 2023/12/18 18:09:33 by mdiez-as         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <stdlib.h>
+#include "libft.h"
 
-static int	has_whitespaces(char *str, int *i, size_t *j)
+static int	ft_isinstr(const char *s, const char c)
 {
-	while (IS_SPACE(*(str + *i)))
-		(*i)++;
-	while (IS_SPACE(*(str + *j)))
-		(*j)--;
-	if (*i || *j < ft_strlen(str))
-		return (1);
+	while (*s)
+	{
+		if (*s == c)
+			return (1);
+		s++;
+	}
 	return (0);
 }
 
-char		*ft_strtrim(char const *s)
+static int	ft_getend(const char *s, const char *set, int end)
 {
-	int		i;
-	size_t	j;
-	int		k;
-	char	*new_str;
-	size_t	new_size;
+	while (ft_isinstr(set, s[end]) && end > 0)
+		end--;
+	return (end);
+}
 
-	if (!s)
+/* Trims the beginning and end of a string by characters included in the set */
+char	*ft_strtrim(char const *s, char const *set)
+{
+	int		end;
+	int		i;
+	int		j;
+	char	*trimmed;
+
+	if (s == NULL || set == NULL)
 		return (NULL);
+	end = ft_getend(s, set, ft_strlen(s) - 1);
+	if (ft_strlen(s) == 0 || end == 0)
+		return (ft_calloc(1, 1));
 	i = 0;
-	k = 0;
-	j = ft_strlen(s) - 1;
-	if (!has_whitespaces((char *)s, &i, &j) || !ft_strlen(s))
-		return ((char *)s);
-	new_size = (i == (int)ft_strlen(s)) ? 0 : ft_strlen(s) - (size_t)i - \
-				(ft_strlen(s) - j);
-	new_str = ft_strnew(new_size + 1);
-	if (!new_str)
+	while (ft_isinstr(set, s[i]) && s[i])
+		i++;
+	trimmed = ft_calloc(end - i + 2, sizeof(char));
+	if (trimmed == NULL)
 		return (NULL);
-	while (i <= (int)j)
-		*(new_str + k++) = *(s + i++);
-	return (new_str);
+	j = 0;
+	while (i <= end && s[i])
+	{
+		trimmed[j] = s[i];
+		i++;
+		j++;
+	}
+	return (trimmed);
 }
