@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdiez-as <mdiez-as@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mgaspar- <mgaspar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/27 00:50:46 by jrameau           #+#    #+#             */
-/*   Updated: 2023/12/18 18:09:33 by mdiez-as         ###   ########.fr       */
+/*   Updated: 2023/12/19 18:43:17 by mgaspar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,11 @@ char	*ft_strtrim(char const *s, char const *set)
 		return (NULL);
 	end = ft_getend(s, set, ft_strlen(s) - 1);
 	if (ft_strlen(s) == 0 || end == 0)
-		return (ft_calloc(1, 1));
+		return (calloc(1, 1));
 	i = 0;
 	while (ft_isinstr(set, s[i]) && s[i])
 		i++;
-	trimmed = ft_calloc(end - i + 2, sizeof(char));
+	trimmed = calloc(end - i + 2, sizeof(char));
 	if (trimmed == NULL)
 		return (NULL);
 	j = 0;
