@@ -6,7 +6,7 @@
 #    By: mgaspar- <mgaspar-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/09/21 14:58:27 by jrameau           #+#    #+#              #
-#    Updated: 2023/11/25 14:52:42 by mgaspar-         ###   ########.fr        #
+#    Updated: 2023/12/19 20:36:36 by mgaspar-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -96,7 +96,8 @@ FILES		= ft_memset.c \
 				ft_strjoinchcl.c \
 				ft_count2darray.c \
 				ft_strarrmax.c \
-				ft_get_parent_path.c
+				ft_get_parent_path.c \
+				ft_strequals.c
 OBJ			= $(FILES:%.c=%.o)
 
 all: $(NAME)

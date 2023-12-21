@@ -6,7 +6,7 @@
 /*   By: mgaspar- <mgaspar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 17:22:54 by mdiez-as          #+#    #+#             */
-/*   Updated: 2023/12/12 19:47:37 by mgaspar-         ###   ########.fr       */
+/*   Updated: 2023/12/19 21:08:56 by mgaspar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@
 # include <sys/wait.h>
 # include <sys/types.h>
 # include <stdbool.h>
+# include <stdio.h>
+# include <readline/readline.h>
+# include <readline/history.h>
+# include "../inc/libft/libft.h"
+
 
 typedef enum e_parser_tok_type
 {
@@ -64,6 +69,13 @@ typedef struct s_expander_tokens
 	bool	is_pipe;
 }	t_exp_tok;
 
+typedef struct s_env {
+	char **parent_env;
+	char **env;
+} t_env;
+
+void	init_env(char **parent_env, t_env env);
+char	*query_env(char *var_name, t_env *env);
 
 
 

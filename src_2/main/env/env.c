@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   env.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgaspar- <mgaspar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/11 18:00:54 by mdiez-as          #+#    #+#             */
-/*   Updated: 2023/12/19 21:15:08 by mgaspar-         ###   ########.fr       */
+/*   Created: 2023/12/19 21:00:14 by mgaspar-          #+#    #+#             */
+/*   Updated: 2023/12/19 21:15:48 by mgaspar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#include "../../../include_2/main.h"
 
-# include "../inc/libft/libft.h"
-# include <errno.h>
-# include <dirent.h>
-# include <stdbool.h>
-# include <fcntl.h>
-# include <unistd.h>
-# include <stdio.h>
-//# include "error_utils.h"
+int	init_env(char **parent_env, t_env *env)
+{
+	char	*env_var;
+	int		n_vars;
 
-# define EXIT_SYNTAX_ERROR 258
-# define EXIT_CMD_NOT_FOUND 127
-# define EXIT_CTRL_D 130
+	// copy every str pointer in parent_env to env->env
+	n_vars = 0;
+	while (parent_env[n_vars])
+		n_vars++;
+	env->env = (char **)malloc(n_vars * sizeof(char *));
+	if (!env->env)
+		return (EXIT_FAILURE);
+	env_var = *parent_env;
 
+}
 
-#endif
+char	*query_env(char *var_name, t_env *env)
+{
+
+}
+
