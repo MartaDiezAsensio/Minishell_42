@@ -6,7 +6,7 @@
 /*   By: mdiez-as <mdiez-as@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 13:30:42 by mdiez-as          #+#    #+#             */
-/*   Updated: 2023/12/13 14:22:48 by mdiez-as         ###   ########.fr       */
+/*   Updated: 2023/12/28 11:38:25 by mdiez-as         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,3 +52,18 @@ static bool	is_special(char *lex_tok, int special_kind)
 	}
 	return (false);
 }
+
+
+
+// bool	is_valid_syntax(char *lex_toks[])
+// {
+// 	int	i;
+
+// 	i = 0;
+// 	while (lex_toks[i])
+// 	{
+// 		if (!is_quote_token(lex_toks[i]))
+// 			if (i == 0 || get_lex_toks()[i + 1] == NULL)
+// 				if (ft_strlen(lex_toks[i]) == 2 && ())
+// 	}
+// }
