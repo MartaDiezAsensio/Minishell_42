@@ -6,7 +6,7 @@
 /*   By: mdiez-as <mdiez-as@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 13:30:42 by mdiez-as          #+#    #+#             */
-/*   Updated: 2023/12/28 11:40:07 by mdiez-as         ###   ########.fr       */
+/*   Updated: 2023/12/28 11:55:29 by mdiez-as         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,42 @@ static bool	is_special(char *lex_tok, int special_kind)
 	return (false);
 }
 
+static bool	is_correct_special(char *lex_tok)
+{
+	if (lex_tok[0] == '(' && ft_strchr(lex_tok, ')'))
+		return (true);
+	if (ft_strlen(lex_tok) != 2)
+	{
+		if (ft_strstr(lex_tok, "&&") || ft_strstr(lex_tok, "||") \
+		|| ft_strstr(lex_tok, "<<") || ft_strstr(lex_tok, ">>"))
+			return (false);
+		if (ft_strchr(lex_tok, '&'))
+			return (false);
+	}
+	if (ft_strlen(lex_tok) != 1)
+	{
+		if ((ft_strchr(lex_tok, '<') && !ft_strstr(lex_tok, "<<"))\
+		|| (ft_strchr(lex_tok, '>') && !ft_strstr(lex_tok, ">>")) \
+		|| (ft_strchr(lex_tok, '|') && !ft_strstr(lex_tok, "||")))
+			return (false);
+	}
+	return (true);
+}
 
+static bool	is_correct_pipe(char *curr, char *next)
+{
+	if (ft_strlen(curr) == 1 && ft_strchr(curr, '|'))
+	{
+		if (next == NULL)
+			return (false);
+		if (ft_strlen(next) == 2)
+		{
+			if (ft_strstr(next, "&&") || ft_strstr(next, "||"))
+				return (false);
+		}
+	}
+	return (true);
+}
 
 // bool	is_valid_syntax(char *lex_toks[])
 // {
@@ -63,7 +98,23 @@ static bool	is_special(char *lex_tok, int special_kind)
 // 	while (lex_toks[i])
 // 	{
 // 		if (!is_quote_token(lex_toks[i]))
+// 		{
 // 			if (i == 0 || get_lex_toks()[i + 1] == NULL)
-// 				if (ft_strlen(lex_toks[i]) == 2 && ())
+// 				if (ft_strlen(lex_toks[i]) == 2 && (ft_strstr(lex_toks[i], "&&")
+// 						|| ft_strstr(lex_toks[i], "||")))
+// 					return (false);
+// 			if (get_lex_toks()[i + 1] == NULL)
+// 				if (is_redir(lex_toks[i]))
+// 					return (false);
+// 			if (!is_correct_special(lex_toks[i]))
+// 				return (false);
+// 			if (!is_correc_pipe(lex_toks[i], lex_toks[i + 1]))
+// 				return (false);
+// 			if (ft_strchr(lex_toks[i], '(') && ft_strchr(lex_toks[i], ')'))
+// 				if (i != 0 && is_special(lex_toks[i - 1], 0))
+// 					return (false);
+// 		}
+// 		i++;
 // 	}
+// 	return (true);
 // }
