@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgaspar- <mgaspar-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mdiez-as <mdiez-as@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 19:12:17 by mgaspar-          #+#    #+#             */
-/*   Updated: 2023/12/19 21:15:55 by mgaspar-         ###   ########.fr       */
+/*   Updated: 2024/01/06 16:02:22 by mdiez-as         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,13 @@ int	shell_loop(void)
 	}
 }
 
-int	main(int argc, char **argv, char **parent_env)
-{
-	t_env	env;
+// int	main(int argc, char **argv, char **parent_env)
+// {
+// 	t_env	env;
 
-	(void)argc;
-	(void)argv;
-	init_env(parent_env, &env);
-	shell_loop();
-	return (EXIT_SUCCESS);
-}
+// 	(void)argc;
+// 	(void)argv;
+// 	init_env(parent_env, &env);
+// 	shell_loop();
+// 	return (EXIT_SUCCESS);
+// }

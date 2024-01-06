@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   join_quotes_utils.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdiez-as <mdiez-as@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: mdiez-as <mdiez-as@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 12:00:34 by mdiez-as          #+#    #+#             */
-/*   Updated: 2023/12/28 12:01:01 by mdiez-as         ###   ########.fr       */
+/*   Updated: 2024/01/06 18:05:02 by mdiez-as         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,14 @@
 #include "../../../../include_2/main.h"
 #include "../../../../include_2/lexer_utils.h"
 
+/**
+ * @brief	Adds and modifies tokens in the inicial steps of processing the token
+ * 			sequence.
+ * 
+ * @param tokens 
+ * @param quo 
+ * @return int (2)
+ */
 static int	start_one(char ***tokens, t_quotes *quo)
 {
 	*tokens = ft_add_single_str(tokens, quo->i, quo->start);
@@ -37,6 +45,15 @@ static int	start_one(char ***tokens, t_quotes *quo)
 	return (2);
 }
 
+/**
+ * @brief	This function modifies 'quo->end' based on the length, removing the
+ * 			first character if its length is greater or equal to 2. It also adjusts the
+ * 			length of the correspoding token in the (*tokens) array.
+ * 
+ * @param tokens 
+ * @param quo 
+ * @return int (exit success)
+ */
 static int	start_two_utils(char ***tokens, t_quotes *quo)
 {
 	if (ft_strlen(quo->end) >= 2)
