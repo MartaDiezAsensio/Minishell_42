@@ -1,4 +1,11 @@
 /bin/zsh
 
-#https://github.com/cclaude42/minishell/blob/cclaude/srcs/parsing/tokens.c
+https://github.com/cclaude42/minishell/blob/cclaude/srcs/parsing/tokens.c
+
+https://github.com/Kuninoto/42_minishell/tree/master/lvl_3_minishell/srcs
+
+https://github.com/maiadegraaf/minishell/blob/main/src/main.c
+
+https://github.com/barimehdi77/minishell-42cursus/tree/main/src
+
 
